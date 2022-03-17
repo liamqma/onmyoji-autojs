@@ -99,7 +99,7 @@ function refresh() {
   sleep(2000);
   toastLog("确认");
   click(1150, 640);
-  sleep(2000);
+  sleep(5000);
 }
 
 for (var finishedCount = 1; finishedCount <= number; finishedCount++) {
@@ -131,9 +131,11 @@ for (var finishedCount = 1; finishedCount <= number; finishedCount++) {
   if (finishedCount === number) {
     exit();
   }
-  if (tileNumber === 9 && !waitForImage(imgZeroSuccess, 1000, 1)) {
-    refresh();
-    tileNumber = 0;
+  if (tileNumber === 9) {
+    if (!waitForImage(imgZeroSuccess, 1000, 1)) {
+      refresh();
+    }
+    tileNumber = 1;
   } else {
     tileNumber++;
   }
