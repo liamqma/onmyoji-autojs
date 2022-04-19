@@ -132,7 +132,7 @@ for (var finishedCount = 1; finishedCount <= number; finishedCount++) {
     exit();
   }
   if (tileNumber === 9) {
-    if (!waitForImage(imgZeroSuccess, 1000, 1)) {
+    if (!waitForImage(imgZeroSuccess, 1000, 3)) {
       refresh();
     }
     tileNumber = 1;
