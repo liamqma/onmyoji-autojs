@@ -33,10 +33,19 @@ function waitForImages(images, interval, maxRetry, options) {
   return null;
 }
 
+function createArray(max) {
+  var array = [];
+  for (var index = 1; index <= max; index++) {
+    array.push(index);
+  }
+  return array;
+}
+
 module.exports = {
   clickCenter: clickCenter,
   deviceWidth: deviceWidth,
   deviceHeight: deviceHeight,
   waitForImage: waitForImage,
   waitForImages: waitForImages,
+  createArray: createArray,
 };

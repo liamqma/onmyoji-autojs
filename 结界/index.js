@@ -2,22 +2,13 @@ if (!requestScreenCapture()) {
   toast("请求截图失败");
   exit();
 }
-
-function createArray(max) {
-  var array = [];
-  for (var index = 1; index <= max; index++) {
-    array.push(index);
-  }
-  return array;
-}
-
-var tileNumber = dialogs.select("哪格开始", createArray(9)) + 1;
-var number = dialogs.select("一共几次", createArray(30)) + 1;
-
 var utils = require("../utils");
 var clickCenter = utils.clickCenter;
 var waitForImages = utils.waitForImages;
-var waitForImage = utils.waitForImage;
+var createArray = utils.createArray;
+
+var tileNumber = dialogs.select("哪格开始", createArray(9)) + 1;
+var number = dialogs.select("一共几次", createArray(30)) + 1;
 
 var startPointX = 220;
 var startPointY = 220;
@@ -31,7 +22,7 @@ var gapHeight = 22;
 var imgAttack = images.read("进攻.jpeg");
 var imgBaoXiang = images.read("../宝箱.jpeg");
 var imgFailure = images.read("../失败.jpeg");
-var imgZeroSuccess = images.read("零攻破记录.jpeg");
+var imgRefresh = images.read("刷新.jpeg");
 
 var imgAttackWidth = 190;
 var imgAttackHeight = 84;
@@ -132,10 +123,12 @@ for (var finishedCount = 1; finishedCount <= number; finishedCount++) {
     exit();
   }
   if (tileNumber === 9) {
-    if (!waitForImage(imgZeroSuccess, 1000, 3)) {
+    if (waitForImage(imgRefresh)) {
       refresh();
+      tileNumber = 1;
+    } else {
+      exit();
     }
-    tileNumber = 1;
   } else {
     tileNumber++;
   }
