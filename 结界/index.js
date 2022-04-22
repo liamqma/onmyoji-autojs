@@ -4,6 +4,7 @@ if (!requestScreenCapture()) {
 }
 var utils = require("../utils");
 var clickCenter = utils.clickCenter;
+var waitForImage = utils.waitForImage;
 var waitForImages = utils.waitForImages;
 var createArray = utils.createArray;
 
