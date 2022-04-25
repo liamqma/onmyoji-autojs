@@ -28,7 +28,7 @@ for (var index = 1; index <= number; index++) {
 
   toastLog("选人");
   clickCenter();
-  sleep(2000);
+  sleep(5000);
   toastLog("开始");
   click(1742, 907);
   sleep(6000);
