@@ -3,7 +3,7 @@ if (!requestScreenCapture()) {
   exit();
 }
 
-var number = Math.ceil(parseInt(rawInput("请输入体力")) / 4);
+var number = Math.ceil(parseInt(rawInput("请输入体力")) / 3);
 
 var utils = require("../utils");
 var clickCenter = utils.clickCenter;
