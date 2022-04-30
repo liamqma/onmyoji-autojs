@@ -26,7 +26,7 @@ function waitForImages(images, interval, maxRetry, options) {
     for (var i = 0; i < images.length; i++) {
       var img = images[i];
       var p = findImage(screenshot, img, options);
-      if (p) return p;
+      if (p) return { p: p, i: i };
     }
     sleep(interval);
   }

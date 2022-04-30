@@ -106,10 +106,18 @@ for (var finishedCount = 1; finishedCount <= number; finishedCount++) {
   sleep(5000);
   click(1758, 880);
   toastLog("开始战斗");
-  if (!waitForImages([imgBaoXiang, imgFailure])) {
+
+  var response = waitForImages([imgBaoXiang, imgFailure]);
+
+  if (!response) {
     toastLog("没找到结束画面");
     exit();
   }
+
+  if (response.i === 1) {
+    number = number + 1;
+  }
+
   sleep(5000);
   clickCenter();
   toastLog("战斗结束");
