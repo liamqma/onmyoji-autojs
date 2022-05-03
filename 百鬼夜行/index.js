@@ -5,7 +5,6 @@ if (!requestScreenCapture()) {
 
 var utils = require("../utils");
 var waitForImage = utils.waitForImage;
-var clickCenter = utils.clickCenter;
 var deviceWidth = utils.deviceWidth;
 var deviceHeight = utils.deviceHeight;
 var createArray = utils.createArray;
@@ -27,7 +26,7 @@ for (var index = 1; index <= number; index++) {
   sleep(5000);
 
   toastLog("选人");
-  clickCenter();
+  click(deviceWidth / 2, 690);
   sleep(5000);
   toastLog("开始");
   click(1742, 907);
