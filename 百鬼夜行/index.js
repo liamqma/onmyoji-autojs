@@ -4,7 +4,7 @@ if (!requestScreenCapture()) {
 }
 
 var utils = require("../utils");
-var waitForImage = utils.waitForImage;
+var waitForImages = utils.waitForImages;
 var deviceWidth = utils.deviceWidth;
 var deviceHeight = utils.deviceHeight;
 var createArray = utils.createArray;
@@ -12,6 +12,7 @@ var createArray = utils.createArray;
 var number = dialogs.select("一共几次", createArray(99)) + 1;
 
 var imgShare = images.read("分享.jpeg");
+var imgEnter = images.read("进入.jpeg");
 
 for (var index = 1; index <= number; index++) {
   toastLog("邀请好友");
@@ -32,7 +33,7 @@ for (var index = 1; index <= number; index++) {
   click(1742, 907);
   sleep(6000);
 
-  while (!waitForImage(imgShare, 100, 1)) {
+  while (!waitForImages([imgShare, imgEnter], 100, 1)) {
     click(deviceWidth / 2, 690);
     sleep(1000);
   }
