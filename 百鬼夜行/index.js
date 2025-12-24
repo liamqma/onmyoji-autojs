@@ -16,21 +16,21 @@ var imgEnter = images.read("进入.jpeg");
 
 for (var index = 1; index <= number; index++) {
   toastLog("邀请好友");
-  click(272, 900);
-  sleep(2000);
+  // click(466, 900);
+  // sleep(2000);
 
-  click(755, 391);
-  sleep(2000);
+  // click(920, 391);
+  // sleep(2000);
 
   toastLog("进入");
-  click(1665, 907);
+  click(1875, 903);
   sleep(5000);
 
   toastLog("选人");
-  click(deviceWidth / 2, 690);
+  click(deviceWidth / 2, 675);
   sleep(5000);
   toastLog("开始");
-  click(1742, 907);
+  click(2048, 909);
   sleep(6000);
 
   while (!waitForImages([imgShare, imgEnter], 100, 1)) {

@@ -1,4 +1,4 @@
-var deviceWidth = 1920;
+var deviceWidth = 2340;
 var deviceHeight = 1080;
 
 function clickCenter() {
